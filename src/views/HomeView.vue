@@ -105,7 +105,7 @@ export default {
     scene.add(light2);
 
     loader.load(
-      "../assets/lanhao1.gltf",
+      "./assets/lanhao1.gltf",
       function (gltf) {
         scene.add(gltf.scene);
       },
