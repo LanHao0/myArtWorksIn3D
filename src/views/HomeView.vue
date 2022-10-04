@@ -10,7 +10,7 @@
       <button @click="toScene('dushiqi')">创造宇宙的她</button>
       <button @click="toScene('monkey')">猴🐒</button>
       <button @click="toScene('hand')">手与绿叶</button>
-
+      <button @click="toScene('liquidLan')">醒来</button>
       <!--      <div>-->
       <!--        <h3>camera helper</h3>-->
       <!--        <p>position</p>-->
