@@ -1,5 +1,6 @@
 # display3d
 使用vue3+three.js+vuex等来展示我的3D作品
+在线展示连接（自动构建）：https://lanhao0.github.io/myArtWorksIn3D/#/
 
 ## Project setup
 ```
