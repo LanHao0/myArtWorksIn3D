@@ -7,7 +7,7 @@
     "build": "vue-cli-service build&&npm version patch",
     "lint": "vue-cli-service lint",
     "changelogs": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "deploy": "node scripts/gh-pages-deploy.js"
+    "deploy": "node scripts/gh-pages-deploy.mjs"
   },
   "dependencies": {
     "core-js": "^3.8.3",
