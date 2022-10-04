@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build&&npm version patch",
+    "build": "vue-cli-service build&&git stash&&npm version patch",
     "lint": "vue-cli-service lint",
     "changelogs": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "gitBuild": "vue-cli-service build",
     "deploy": "node scripts/gh-pages-deploy.mjs"
   },
   "dependencies": {
