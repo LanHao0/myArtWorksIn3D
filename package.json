@@ -1,6 +1,6 @@
 {
   "name": "display3d",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -35,7 +35,6 @@
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1"
   },
-  "_id": "display3d@0.1.0",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
