@@ -1,4 +1,5 @@
 # display3d
+使用vue3+three.js+vuex等来展示我的3D作品
 
 ## Project setup
 ```
