@@ -6,7 +6,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
 
-export default function loadDuScene(store) {
+export default function loadScene(store) {
   store.commit("setTitle", "创造宇宙的她");
   store.commit("setLoading", true);
   const manager = new THREE.LoadingManager();

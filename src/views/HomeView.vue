@@ -32,7 +32,6 @@
 <script>
 import loadScene from "@/components/racer";
 import { mapState } from "vuex";
-import loadDuScene from "@/components/dushiqi";
 
 export default {
   name: "HomeView",
@@ -52,14 +51,10 @@ export default {
   },
   methods: {
     toScene(name) {
-      //以下方法仅供临时使用，复用率差
-      if (name === "dushiqi") {
-        this.$store.commit("setCurrent", "dushiqi");
-        loadDuScene(this.$store);
-      } else if (name === "racer") {
-        this.$store.commit("setCurrent", "racer");
-        loadScene(this.$store);
-      }
+      const scene = require(`../components/${name}`);
+      this.$store.commit("setCurrent", name);
+      console.log(scene);
+      scene.default(this.$store);
     },
   },
 };
