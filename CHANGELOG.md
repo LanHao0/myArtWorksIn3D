@@ -1,3 +1,7 @@
+## [0.1.2](https://github.com/LanHao0/myArtWorksIn3D/compare/v0.1.1...v0.1.2) (2022-10-04)
+
+
+
 ## [0.1.1](https://github.com/LanHao0/myArtWorksIn3D/compare/3a120ae6d34d20687ab7041539dece9d98147d2b...v0.1.1) (2022-10-04)
 
 
