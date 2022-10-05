@@ -11,6 +11,7 @@
       <button @click="toScene('monkey')">猴🐒</button>
       <button @click="toScene('hand')">手与绿叶</button>
       <button @click="toScene('liquidLan')">醒来</button>
+      <button @click="toScene('lanhaosuper')">我是超人🦸</button>
       <!--      <div>-->
       <!--        <h3>camera helper</h3>-->
       <!--        <p>position</p>-->
