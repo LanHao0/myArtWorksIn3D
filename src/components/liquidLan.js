@@ -83,7 +83,7 @@ export default function loadScene(store) {
   scene.add(light4);
 
   loader.load(
-    "./assets/liquid.fbx",
+    process.env.VUE_APP_3D_MODELS_CDN + "liquid.fbx",
     function (object) {
       scene.add(object);
     },

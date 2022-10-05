@@ -82,7 +82,7 @@ export default function loadScene(store) {
   scene.add(light2);
 
   loader.load(
-    "./assets/dushiqi.gltf",
+    process.env.VUE_APP_3D_MODELS_CDN + "dushiqi.gltf",
     function (gltf) {
       scene.add(gltf.scene);
     },

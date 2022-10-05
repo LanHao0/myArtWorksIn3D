@@ -78,7 +78,7 @@ export default function loadScene(store) {
   scene.add(light2);
 
   loader.load(
-    "./assets/monkeyhead.fbx",
+    process.env.VUE_APP_3D_MODELS_CDN + "monkeyhead.fbx",
     function (object) {
       scene.add(object);
     },

@@ -86,7 +86,7 @@ export default function loadScene(store) {
   scene.add(light2);
 
   loader.load(
-    "./assets/lanhao1.gltf",
+    process.env.VUE_APP_3D_MODELS_CDN + "lanhao1.gltf",
     function (gltf) {
       scene.add(gltf.scene);
     },
