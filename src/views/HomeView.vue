@@ -2,10 +2,6 @@
   <div>
     <div class="title">
       <h1>我的3D作品 {{ title }}</h1>
-      <div v-if="loading">
-        <h2>加载中...</h2>
-        <h2>{{ downloadProcess }} %</h2>
-      </div>
       <button @click="toScene('racer')">异次元赛车手</button>
       <button @click="toScene('dushiqi')">创造宇宙的她</button>
       <button @click="toScene('monkey')">猴🐒</button>
@@ -25,6 +21,10 @@
       <!--        <span>{{ camera.rotateY }},</span>-->
       <!--        <span>{{ camera.rotateZ }}</span>-->
       <!--      </div>-->
+      <div v-if="loading" class="loading-bottom">
+        <h2>加载中...</h2>
+        <h2>{{ downloadProcess }} %</h2>
+      </div>
     </div>
     <div id="displayArea"></div>
   </div>
@@ -32,6 +32,11 @@
 <style scoped>
 .title {
   position: absolute;
+}
+.loading-bottom {
+  position: absolute;
+  top: 80vh;
+  left: 0;
 }
 </style>
 <script>

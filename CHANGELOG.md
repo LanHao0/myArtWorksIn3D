@@ -1,4 +1,16 @@
-## [0.1.4](https://github.com/LanHao0/myArtWorksIn3D/compare/v0.1.2...v0.1.4) (2022-10-05)
+## [0.1.4](https://github.com/LanHao0/myArtWorksIn3D/compare/v0.1.2...v0.1.4) (2022-10-06)
+
+
+### Bug Fixes
+
+* 3d model生产环境使用CDN资源 ([da8fc06](https://github.com/LanHao0/myArtWorksIn3D/commit/da8fc06b98a5dd694d01aa5f70ffe3d8e067c3bf))
+* 网页语言修复 ([a0d981b](https://github.com/LanHao0/myArtWorksIn3D/commit/a0d981bcf7c3cbe0ef9d59fd8300e6a85958c5d7))
+
+
+### Features
+
+* 增加场景 我是超人 ([3580c7d](https://github.com/LanHao0/myArtWorksIn3D/commit/3580c7d86ce881307d3f6b9afa7c300802d85a82))
+* 增加场景 矩阵 ([f9c1c64](https://github.com/LanHao0/myArtWorksIn3D/commit/f9c1c647a29660a442ceed16f6c6f11f757c4f99))
 
 
 
