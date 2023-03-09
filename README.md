@@ -5,6 +5,7 @@
 
 在线展示连接（自动构建）：https://lanhao0.github.io/myArtWorksIn3D/#/
 
+支持VR中查看
 ## Project setup
 ```
 yarn install

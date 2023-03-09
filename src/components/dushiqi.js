@@ -5,6 +5,7 @@ Time: 10/4/2022 11:48:43
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
+import { VRButton } from "three/addons/webxr/VRButton";
 
 export default function loadScene(store) {
   store.commit("setTitle", "创造宇宙的她");
@@ -91,19 +92,10 @@ export default function loadScene(store) {
       console.error(error);
     }
   );
-
-  function animate() {
-    requestAnimationFrame(animate);
+  document.body.appendChild(VRButton.createButton(renderer)); // 添加VR按钮
+  renderer.xr.enabled = true;
+  renderer.setAnimationLoop(function () {
     controls.update();
-    // store.commit("setCamera", {
-    //   x: camera.position.x,
-    //   y: camera.position.y,
-    //   z: camera.position.z,
-    //   rotateX: camera.rotation.x,
-    //   rotateY: camera.rotation.y,
-    //   rotateZ: camera.rotation.z,
-    // });
     renderer.render(scene, camera);
-  }
-  animate();
+  });
 }

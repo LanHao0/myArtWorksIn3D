@@ -61,6 +61,10 @@ export default {
   },
   methods: {
     toScene(name) {
+      const element = document.getElementById("VRButton");
+      if (element) {
+        element.remove();
+      }
       const scene = require(`../components/${name}`);
       this.$store.commit("setCurrent", name);
       console.log(scene);

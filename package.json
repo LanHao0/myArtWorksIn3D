@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "serve_https": "vue-cli-service serve --https",
     "build": "vue-cli-service build --mode production &&npm version patch",
     "lint": "vue-cli-service lint",
     "changelogs": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
