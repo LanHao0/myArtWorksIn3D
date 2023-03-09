@@ -7,6 +7,59 @@ import { OrbitControls } from "three/addons/controls/OrbitControls";
 import { FBXLoader } from "three/addons/loaders/FBXLoader.js";
 import { VRButton } from "three/addons/webxr/VRButton";
 
+import { XRControllerModelFactory } from "three/addons/webxr/XRControllerModelFactory";
+
+let obj = null;
+let controller1, controller2, controllerGrip2, controllerGrip1;
+
+let selectStart;
+function onSelectStart() {
+  // const controller = event.target;
+  //todo 移动位置
+}
+function onSelectStart2() {
+  // const controller = event.target;
+  obj.rotation.y -= 0.1;
+  selectStart = setInterval(() => {
+    obj.rotation.y -= 0.1;
+  }, 100);
+}
+
+function onSelectEnd() {
+  clearInterval(selectStart);
+  // const controller = event.target;
+}
+
+function onSqueezeEvent(event) {
+  switch (event.type) {
+    case "squeezestart":
+      selectStart = setInterval(() => {
+        obj.scale.x += 0.1;
+        obj.scale.y += 0.1;
+        obj.scale.z += 0.1;
+      }, 100);
+      break;
+    case "squeezeend":
+      clearInterval(selectStart);
+      break;
+  }
+}
+
+function onSqueezeEvent2(event) {
+  switch (event.type) {
+    case "squeezestart":
+      selectStart = setInterval(() => {
+        obj.scale.x -= 0.1;
+        obj.scale.y -= 0.1;
+        obj.scale.z -= 0.1;
+      }, 100);
+      break;
+    case "squeezeend":
+      clearInterval(selectStart);
+      break;
+  }
+}
+
 export default function loadScene(store) {
   store.commit("setTitle", "醒来");
   store.commit("setLoading", true);
@@ -86,7 +139,8 @@ export default function loadScene(store) {
   loader.load(
     process.env.VUE_APP_3D_MODELS_CDN + "liquid.fbx",
     function (object) {
-      scene.add(object);
+      obj = object;
+      scene.add(obj);
     },
     undefined,
     function (error) {
@@ -95,7 +149,46 @@ export default function loadScene(store) {
   );
   document.body.appendChild(VRButton.createButton(renderer)); // 添加VR按钮
   renderer.xr.enabled = true; // 开启VR
+  controller1 = renderer.xr.getController(0);
+  controller1.addEventListener("selectstart", onSelectStart);
+  controller1.addEventListener("selectend", onSelectEnd);
+  scene.add(controller1);
+  controller1.addEventListener("squeezestart", onSqueezeEvent2);
+  controller1.addEventListener("squeezeend", onSqueezeEvent2);
 
+  controller2 = renderer.xr.getController(1);
+  controller2.addEventListener("selectstart", onSelectStart2);
+  controller2.addEventListener("selectend", onSelectEnd);
+
+  controller2.addEventListener("squeezestart", onSqueezeEvent);
+  controller2.addEventListener("squeezeend", onSqueezeEvent);
+
+  scene.add(controller2);
+
+  const controllerModelFactory = new XRControllerModelFactory();
+
+  controllerGrip1 = renderer.xr.getControllerGrip(0);
+  controllerGrip1.add(
+    controllerModelFactory.createControllerModel(controllerGrip1)
+  );
+  scene.add(controllerGrip1);
+
+  controllerGrip2 = renderer.xr.getControllerGrip(1);
+  controllerGrip2.add(
+    controllerModelFactory.createControllerModel(controllerGrip2)
+  );
+  scene.add(controllerGrip2);
+  const geometry = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0, 0, 0),
+    new THREE.Vector3(0, 0, -1),
+  ]);
+
+  const line = new THREE.Line(geometry);
+  line.name = "line";
+  line.scale.z = 5;
+
+  controller1.add(line.clone());
+  controller2.add(line.clone());
   renderer.setAnimationLoop(function () {
     controls.update();
     renderer.render(scene, camera);
