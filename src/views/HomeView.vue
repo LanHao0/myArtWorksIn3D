@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="title">
-      <h1>我的3D作品 {{ title }}</h1>
+      <h1 class="name">我的3D作品 {{ title }}</h1>
       <button @click="toScene('racer')">异次元赛车手</button>
       <button @click="toScene('dushiqi')">创造宇宙的她</button>
       <button @click="toScene('monkey')">猴🐒</button>
@@ -9,6 +9,8 @@
       <button @click="toScene('liquidLan')">醒来</button>
       <button @click="toScene('lanhaosuper')">我是超人🦸</button>
       <button @click="toScene('matrix')">矩阵</button>
+      <button @click="toScene('sitBench')">板凳上的我</button>
+
       <!--      <div>-->
       <!--        <h3>camera helper</h3>-->
       <!--        <p>position</p>-->
@@ -32,6 +34,9 @@
 <style scoped>
 .title {
   position: absolute;
+}
+.name {
+  text-shadow: 5px 1px 10px rgba(0, 0, 0, 0.5);
 }
 .loading-bottom {
   position: absolute;
