@@ -84,7 +84,7 @@ export default function loadScene(store) {
     sphericalHarmonicsDegree: 2,
   });
   viewer
-    .addSplatScene(process.env.VUE_APP_3D_MODELS_CDN + "sit.ksplat", {
+    .addSplatScene("./assets/sit.ksplat", {
       streamView: true,
     })
     .then(() => {
